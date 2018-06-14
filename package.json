@@ -1,7 +1,7 @@
 {
   "name": "mapster",
-  "version": "0.0.0",
-  "description": "An threatmap visualisation plugin for Kibana, useful for showing off demos to non-technical investors.",
+  "version": "6.2.4",
+  "description": "A threatmap visualisation plugin for Kibana, useful for showing off demos to non-technical investors.",
   "main": "index.js",
   "kibana": {
     "version": "6.2.4",
