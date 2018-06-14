@@ -5,11 +5,13 @@ require('plugins/mapster/mapster_params_editor.js');
 import 'ui/visualize/visualize_legend';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
+import { VisSchemasProvider } from 'ui/vis/editors/default/schemas';
 import MapsterTemplate from 'plugins/mapster/mapster.html';
 import MapsterParamsEditor from 'plugins/mapster/mapster_params_editor.html'
 
 const mapsterProvider = (Private) => {
     const VisFactory = Private(VisFactoryProvider);
+    const Schemas = Private(VisSchemasProvider);
 
     return VisFactory.createAngularVisualization({
         name: 'mapster',
@@ -45,7 +47,67 @@ const mapsterProvider = (Private) => {
             }
         },
         editorConfig: {
-            optionsTemplate: MapsterParamsEditor
+            optionsTemplate: MapsterParamsEditor,
+            schemas: new Schemas([
+                {
+                    group: 'metrics',
+                    name: 'count',
+                    title: 'Count',
+                    aggFilter: ['count'],
+                    min: 1,
+                    max: 1
+                },
+                {
+                    group: 'buckets',
+                    name: 'timestamp',
+                    icon: 'fa fa-clock-o',
+                    title: 'Timestamp',
+                    min: 1,
+                    max: 1
+                },
+                {
+                    group: 'buckets',
+                    name: 'coords',
+                    icon: 'fa fa-map-marker',
+                    title: 'Coordinates',
+                    aggFilter: 'geohash_grid',
+                    min: 1,
+                    max: 1
+                },
+                {
+                    group: 'buckets',
+                    name: 'peer_ip',
+                    icon: 'fa fa-server',
+                    title: 'IP',
+                    min: 1,
+                    max: 1
+                },
+                {
+                    group: 'buckets',
+                    name: 'sensor',
+                    icon: 'fa fa-signal',
+                    title: 'Sensor',
+                    min: 1,
+                    max: 1
+                },
+                {
+                    group: 'buckets',
+                    name: 'target',
+                    title: 'Target location',
+                    icon: 'fa fa-dot-circle-o',
+                    min: 0,
+                    max: 1
+                },
+                //FIXME I don't know why but it looks like extra buckets are useless to filter with another field.
+                {
+                    group: 'buckets',
+                    name: 'extra',
+                    title: 'Extra data to filter',
+                    icon: 'fa fa-database',
+                    min: 0,
+                    max: 10
+                }
+            ])
         }
     });
 };
