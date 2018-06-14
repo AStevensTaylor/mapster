@@ -5,7 +5,6 @@ require('plugins/mapster/mapster_params_editor.js');
 import 'ui/visualize/visualize_legend';
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import { VisFactoryProvider } from 'ui/vis/vis_factory';
-import { VisTypesRegistryProvider } from 'ui/registry/vis_types';
 import MapsterTemplate from 'plugins/mapster/mapster.html';
 import MapsterParamsEditor from 'plugins/mapster/mapster_params_editor.html'
 
