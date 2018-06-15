@@ -14,7 +14,7 @@ module.controller('MapsterController', function ($scope, Private) {
       const vis = $scope.vis;
       const params = vis.params;
 
-      console.log("Visualization Aggs: ", vis.aggs);
+      console.log("Visualization Aggs: ", vis.aggs[0].schema);
       console.log(vis.aggs.bySchemaName['timestamp']);
       console.log(vis.aggs.bySchemaName['coords']);
       console.log(vis.aggs.bySchemaName['peer_ip']);
