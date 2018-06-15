@@ -14,6 +14,8 @@ module.controller('MapsterController', function ($scope, Private) {
       const vis = $scope.vis;
       const params = vis.params;
 
+      console.log("Visualization Aggs: ", vis.aggs)
+
       // Get the column numbers
       try {
         var timestampAggId = vis.aggs.bySchemaName['timestamp'][0].id;
