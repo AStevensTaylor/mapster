@@ -9,6 +9,22 @@ module.controller('MapsterController', function ($scope, Private) {
   const tabifyAggResponse = Private(AggResponseTabifyProvider);
   const palette = ['#DC143C', '#FFD700', '#228B22', '#20B2AA', '#FF00FF', '#D2691E', '#FA8072', '#006400', '#0000CD', '#9400D3', '#A0522D', '#00BFFF', '#3CB371', '#7CFC00', '#8B0000', '#EEE8AA', '#00FF7F','#87CEFA', '#FF69B4', '#B0C4DE'];
 
+  setInterval(function(){
+      const vis = $scope.vis;
+      const params = vis.params;
+      console.log("aggs", vis.aggs);
+      for(let i = 0; i < vis.aggs.length; i++) {
+          const val = vis.aggs[i];
+          console.log(val);
+          try {
+              console.log(val.schema);
+          } catch (ignored){
+              console.log("Failed to load schema ");
+          }
+      }
+
+  }, 30000);
+
   $scope.$watch('esResponse', function (resp) {
     if (resp) {
       console.log(resp);
