@@ -1,12 +1,12 @@
 var _ = require('lodash');
 var geohash = require('plugins/mapster/lib/latlon-geohash.js');
 
-import { AggResponseTabifyTabifyProvider } from 'ui/agg_response/tabify/tabify';
+import { AggResponseTabifyProvider } from 'ui/agg_response/tabify/tabify';
 
 var module = require('ui/modules').get('mapster');
 
 module.controller('MapsterController', function ($scope, Private) {
-  const tabifyAggResponse = Private(AggResponseTabifyTabifyProvider);
+  const tabifyAggResponse = Private(AggResponseTabifyProvider);
   const palette = ['#DC143C', '#FFD700', '#228B22', '#20B2AA', '#FF00FF', '#D2691E', '#FA8072', '#006400', '#0000CD', '#9400D3', '#A0522D', '#00BFFF', '#3CB371', '#7CFC00', '#8B0000', '#EEE8AA', '#00FF7F','#87CEFA', '#FF69B4', '#B0C4DE'];
 
   $scope.$watch('esResponse', function (resp) {
