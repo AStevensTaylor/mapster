@@ -11,15 +11,19 @@ module.controller('MapsterController', function ($scope, Private) {
 
   $scope.$watch('esResponse', function (resp) {
     if (resp) {
+      console.log(resp);
       const vis = $scope.vis;
       const params = vis.params;
+      console.log("aggs", vis.aggs);
+      for(let i in vis.aggs) {
+          console.log(i);
+          try {
+              console.log(i.schema);
+          } catch {
+            console.log("Failed to load schema");
+          }
+      }
 
-      console.log("Visualization Aggs: ", vis.aggs[0].schema);
-      console.log(vis.aggs.bySchemaName['timestamp']);
-      console.log(vis.aggs.bySchemaName['coords']);
-      console.log(vis.aggs.bySchemaName['peer_ip']);
-      console.log(vis.aggs.bySchemaName['sensor']);
-      console.log(resp);
 
       // Get the column numbers
       try {
