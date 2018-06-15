@@ -13,16 +13,14 @@ module.controller('MapsterController', function ($scope, Private) {
       const vis = $scope.vis;
       const params = vis.params;
       console.log("aggs", vis.aggs);
-      for(let i = 0; i < vis.aggs.length; i++) {
-          const val = vis.aggs[i];
-          console.log(val);
+      // Get the column numbers
+      for (var key in ['timestamp', 'coords', 'peer_ip', 'sensor', 'target']) {
           try {
-              console.log(val.schema);
-          } catch (ignored){
-              console.log("Failed to load schema ");
+              console.log(vis.aggs.bySchemaName[key]);
+          } catch (err) {
+              console.error(`${key} is not set.`);
           }
       }
-
   }, 30000);
 
   $scope.$watch('esResponse', function (resp) {
