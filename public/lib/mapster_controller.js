@@ -13,6 +13,7 @@ module.controller('MapsterController', function ($scope, Private) {
       const vis = $scope.vis;
       const params = vis.params;
       console.log("aggs", vis.aggs);
+      console.log(vis.aggs.bySchemaName);
       // Get the column numbers
       for (var key in ['timestamp', 'coords', 'peer_ip', 'sensor', 'target']) {
           try {
