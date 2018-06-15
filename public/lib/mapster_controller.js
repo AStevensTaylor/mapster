@@ -20,7 +20,7 @@ module.controller('MapsterController', function ($scope, Private) {
           try {
               console.log(i.schema);
           } catch {
-            console.log("Failed to load schema");
+            console.log("Failed to load schema ");
           }
       }
 
