@@ -15,10 +15,11 @@ module.controller('MapsterController', function ($scope, Private) {
       const vis = $scope.vis;
       const params = vis.params;
       console.log("aggs", vis.aggs);
-      for(let i in vis.aggs) {
-          console.log(i);
+      for(let i = 0; i < vis.aggs.length; i++) {
+        const val = vis.aggs[i];
+          console.log(val);
           try {
-              console.log(i.schema);
+              console.log(val.schema);
           } catch (ignored){
             console.log("Failed to load schema ");
           }
