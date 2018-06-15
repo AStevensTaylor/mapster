@@ -18,6 +18,7 @@ const mapsterProvider = (Private) => {
         title: 'Mapster',
         description: 'MAPSTER MUCH PIEW MUCH WOW',
         icon: 'fa-globe',
+        responseHandler: 'none',
         visConfig: {
             template: MapsterTemplate,
             defaults: {
